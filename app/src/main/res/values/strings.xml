@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Coffe</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="email">Enter your email</string>
+    <string name="password">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="firstName">First name</string>
+    <string name="lastName">Last name</string>
+    <string name="account">Don\'t have an account?</string>
+    <string name="find">Find the best \ncoffee for you</string>
+    <string name="title_activity_place_order">PlaceOrderActivity</string>
+    <string name="title_activity_order">OrderActivity</string>
+
+</resources>

@@ -1,0 +1,154 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "mhmd.salem.coffe"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion '1.5.21'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+
+    //Important for viewModelFactory
+    kotlinOptions {
+        freeCompilerArgs += [
+                "-Xjvm-default=all",
+        ]
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation 'androidx.activity:activity-compose:1.5.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+    //OBSERVE AS STATE
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1'
+    implementation "androidx.compose.runtime:runtime-livedata:1.0.0-alpha07"
+    implementation("androidx.navigation:navigation-compose:2.5.1")
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.1"
+
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+
+    //lifecycle
+    def lifecycle = "2.4.0-rc01"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle")
+
+
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.6'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.3'
+
+
+        //Google Play Services For Location
+      implementation 'com.google.android.gms:play-services-location:20.0.0'
+
+    def lifecycle_version = "2.4.0-rc01"
+    //videoModel mvvm
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "android.arch.lifecycle:extensions:1.1.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+
+
+    def roomVersion = "2.4.2"
+
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+
+
+    //intuit size for screens
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+
+    implementation "com.google.accompanist:accompanist-drawablepainter:0.23.1"
+
+    implementation "com.github.skydoves:landscapist-glide:1.5.1"
+
+
+    //tap layout
+    //implementation "com.google.accompanist:accompanist-pager:0.23.0"
+    //implementation "com.google.accompanist:accompanist-pager-indicators:0.23.0"
+
+
+
+    def data_store ='1.0.0-alpha01'
+    implementation "androidx.datastore:datastore-preferences:$data_store"
+
+    def life_cycle = '2.2.0-alpha01'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$life_cycle"
+
+
+
+    //Icons 
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+
+    implementation "androidx.compose.ui:ui:1.2.0-beta02"
+    implementation "androidx.compose.material:material:1.2.0-beta02"
+
+}

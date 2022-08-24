@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="mhmd.salem.coffe">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Coffe">
+        <activity
+            android:name=".Activites.OrderActivity"
+            android:exported="false"
+            android:label="@string/title_activity_order"
+            android:theme="@style/MainTheme" />
+        <activity
+            android:name=".Activites.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/MainTheme"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Activites.SplashScreenActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/SplashTheme"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
