@@ -1,4 +1,4 @@
-# ecommerce-Jetpack
+# ecommerceJetpack
 coffee
 
 
